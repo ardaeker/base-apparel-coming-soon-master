@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Arda Eker">
+  <meta name="description"
+    content="This is a solution to the Base Apparel coming soon page challenge on Frontend Mentor. Frontend Mentor challenges help you improve your coding skills by building realistic projects.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Base Apparel coming soon page</title>
+  <link rel="stylesheet" href="./src/css/style.css">
+</head>
+
+<body>
+  <header>
+    <section class="logo__section">
+      <h2 class="offscreen">Logo Section</h2>
+      <img src="./src/images/logo.svg" alt="Base Apparel Logo">
+    </section>
+    <section class="content__section">
+      <h1>We're<span><span>coming</span>soon</span></h1>
+      <p>Hello fellow shoppers! We're currently building our new fashion store.
+        Add your email below to stay up-to-date with announcements and our launch deals.</p>
+      <form>
+        <div class="email__container">
+          <input type="text" id="email" class="email__input" placeholder="Email Address">
+          <img src="./src/images/icon-error.svg" aria-hidden="true" alt="" class="invalid">
+          <button type="button" class="btn__email">
+            <img src="./src/images/icon-arrow.svg" alt="" aria-hidden="true">
+          </button>
+          <p class="invalid__text">Please provide a valid email</p>
+        </div>
+      </form>
+    </section>
+    <section class="img__section">
+      <h2 class="offscreen">Image Section</h2>
+      <div class="hero__mobile">
+        <img src="./src/images/hero-mobile.jpg" alt="" aria-hidden="true">
+      </div>
+      <div class="hero__desktop">
+        <img src="./src/images/hero-desktop.jpg" alt="" aria-hidden="true">
+      </div>
+    </section>
+  </header>
+  <footer>
+    Challenge by &nbsp;<a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    &nbsp;Coded by &nbsp;<a href="https://www.frontendmentor.io/profile/ardaekerFD">Arda Eker</a>.
+  </footer>
+  <script src="./src/js/main.js"></script>
+</body>
+
+</html>

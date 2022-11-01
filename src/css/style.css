@@ -1,0 +1,413 @@
+/*
+  ===================
+    Table Of Contents
+  ===================
+      -  Google Fonts
+      1. Reset (minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css)
+      2. Custom Properties And Utility
+      3. Global Styles
+      4. Typography
+      5. Layout
+      6. Components
+        6.1 Input-Button
+      7. Media Queries
+*/
+
+/*
+  =================
+    - Google Fonts
+  =================
+        font-family: 'Josefin Sans', sans-serif;
+        [300],[400],[600]
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+
+/*
+  ==========
+    1. Reset
+  ==========
+*/
+
+html,
+body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+legend,
+textarea,
+pre,
+iframe,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal
+}
+
+ul {
+  list-style: none
+}
+
+button,
+input,
+select {
+  margin: 0
+}
+
+html {
+  box-sizing: border-box
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit
+}
+
+img,
+video {
+  height: auto;
+  max-width: 100%;
+  display: block;
+}
+
+iframe {
+  border: 0
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0
+}
+
+td,
+th {
+  padding: 0
+}
+
+/*
+  ==================================
+    2. Custom Properties And Utility
+  ==================================
+*/
+
+:root {
+  --desaturated-red: hsl(0, 36%, 70%);
+  --desaturated-red-shadow: hsla(0, 36%, 70%, 0.25);
+  --soft-red: hsl(0, 93%, 68%);
+  --dark-grayish-red: hsl(0, 6%, 24%);
+  --linear-color-first-one: hsl(0, 0%, 100%);
+  --linear-color-first-two: hsl(0, 100%, 98%);
+  --linear-color-second-one: hsl(0, 80%, 86%);
+  --linear-color-second-two: hsl(0, 74%, 74%);
+  /* Linear, 135deg, from hsl(0, 0%, 100%), to hsl(0, 100%, 98%) */
+  /* Linear, 135deg, from hsl(0, 80%, 86%), to hsl(0, 74%, 74%) */
+}
+
+.offscreen {
+  position: absolute;
+  top: -999999px;
+  left: -999999px;
+}
+
+/*
+  ==================
+    3. Global Styles
+  ==================
+*/
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Josefin Sans', sans-serif;
+  background: linear-gradient(135deg, var(--linear-color-first-one), var(--linear-color-first-two));
+}
+
+/*
+  ===============
+    4. Typography
+  ===============
+*/
+
+.content__section {
+  text-align: center;
+}
+
+.content__section h1 {
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 2.5rem;
+  color: var(--desaturated-red);
+  letter-spacing: 0.4rem;
+}
+
+.content__section h1 span {
+  color: var(--dark-grayish-red);
+  font-weight: 600;
+}
+
+.content__section h1 span span {
+  display: block;
+  font-size: 3rem;
+}
+
+.content__section p {
+  font-weight: 400;
+  color: var(--desaturated-red);
+  line-height: 1.5;
+}
+
+/*
+  ===========
+    5. Layout
+  ===========
+*/
+
+header {
+  display: grid;
+  grid-template-columns: minmax(280px, 100vw);
+  grid-template-rows: minmax(86px, 10vh) 250px minmax(468px, 58.5vh);
+}
+
+.content__section {
+  padding: 0 4.8vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.content__section h1 {
+  margin-bottom: 1.563rem;
+}
+
+.content__section p {
+  margin-bottom: 2.188rem;
+}
+
+.logo__section {
+  order: -2;
+  display: flex;
+  align-items: center;
+  padding-left: 7vw;
+}
+
+.img__section {
+  background-color: bisque;
+  order: -1;
+  overflow: hidden;
+}
+
+.img__section img {
+  object-fit: cover;
+  width: 100%;
+  min-height: 15.625rem;
+}
+
+.hero__desktop {
+  display: none;
+}
+
+.email__container {
+  position: relative;
+}
+
+
+footer {
+  display: flex;
+  flex-wrap: nowrap;
+  position: absolute;
+  top: 97%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 20.313rem;
+  font-size: 0.75rem;
+  justify-content: center;
+  background-color: white;
+  align-items: center;
+  border-radius: 0.625rem;
+  padding: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+
+/*
+  ===============
+    6. Components
+  ===============
+      6.1 Input-Button
+*/
+
+.email__input {
+  min-width: 18.75rem;
+  height: 3.125rem;
+  border-radius: 1.563rem;
+  border: 1px solid var(--desaturated-red);
+  background-color: transparent;
+  padding-left: 1.25rem;
+  padding-right: 6.25rem;
+  font-weight: 600;
+}
+
+.email__input:focus {
+  outline: none;
+}
+
+.email__input::placeholder {
+  color: var(--desaturated-red);
+}
+
+.btn__email,
+.btn__email:focus {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 4.063rem;
+  height: 3.125rem;
+  border-radius: 1.563rem;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--linear-color-second-one), var(--linear-color-second-two));
+  box-shadow: 0 10px 8px 2px var(--desaturated-red-shadow);
+  transition: all 0.35s ease-in-out;
+}
+
+.btn__email:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  background: linear-gradient(90deg, var(--linear-color-second-one), var(--linear-color-second-two));
+}
+
+.invalid {
+  display: none;
+  position: absolute;
+  top: 0.813rem;
+  right: 4.688rem;
+}
+
+.content__section .invalid__text {
+  display: none;
+  position: absolute;
+  top: 3.75rem;
+  left: 0.938rem;
+  color: var(--soft-red);
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+
+/*
+  ==================
+    7. Media Queries
+  ==================
+*/
+
+@media (min-width:48em) {
+  header {
+    display: grid;
+    grid-template-columns: minmax(28.75rem, 60vw) minmax(19.188rem, 40vw);
+    grid-template-rows: minmax(10.313rem, 20vh) minmax(39.688rem, 80vh) auto;
+  }
+
+  .img__section {
+    background-color: bisque;
+    grid-area: 1/2/3/3;
+  }
+
+  .img__section img {
+    min-height: 100vh;
+  }
+
+  .hero__mobile {
+    display: none;
+  }
+
+  .hero__desktop {
+    display: block;
+  }
+}
+
+@media (min-width:64em) {
+  header {
+    display: grid;
+    grid-template-columns: minmax(38.375rem, 60vw) minmax(25.625rem, 40vw);
+    grid-template-rows: minmax(10.313rem, 20vh) minmax(39.688rem, 80vh) auto;
+    background: url('../images/bg-pattern-desktop.svg'), linear-gradient(135deg, var(--linear-color-first-one), var(--linear-color-first-two));
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size: 60vw 100vh;
+  }
+
+  .logo__section {
+    padding-left: 15vw;
+  }
+
+  .content__section h1 {
+    font-size: 3rem;
+  }
+
+  .content__section h1 span span {
+    font-size: 3.5rem;
+  }
+
+  .content__section {
+    padding: 0 15vw;
+    align-items: flex-start;
+    text-align: start;
+  }
+
+  .email__input {
+    min-width: 450px;
+    padding-right: 145px;
+  }
+
+  .btn__email,
+  .btn__email:focus {
+    width: 6.25rem;
+  }
+
+  .invalid {
+    position: absolute;
+    top: 0.813rem;
+    right: 7.188rem;
+  }
+
+  .img__section {
+    background-color: bisque;
+    grid-area: 1/2/3/3;
+  }
+
+  .hero__mobile {
+    display: none;
+  }
+
+  .hero__desktop {
+    display: block;
+  }
+}
